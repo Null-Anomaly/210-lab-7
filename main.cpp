@@ -12,13 +12,14 @@ int main()
 {
     string* arr = nullptr;
     arr = new string[5];
+    string *reversed = nullptr;
     arr[0] = "Billy";
     arr[1] = "Bob";
     arr[2] = "Joe";
     arr[3] = "Burt";
     arr[4] = "Tam";
-    reverseArray(arr);
-    displayArray(arr);
+    reversed = reverseArray(arr);
+    displayArray(reversed);
 
     delete[] arr;
     return 0;
@@ -28,17 +29,16 @@ string* reverseArray(string* arry)
 {
     string switcher = 0;
     cout << "Original Array \n";
+    for(int i = 0; i <5; i++)
+    {
+        cout << arry[i] << " ";
+    }
     for(int i = 0; i < 5; i++) 
     {
         switcher = arry[4-i];
         arry[4-i] = arry[i];
         arry[i] = switcher;
-        //cout << "> Element #" << i << ": ";
-        //cin >> safety;
-       // arry[i] = safety;
     }
-    cout << "Data entry complete.\n";
-
     return arry;
 }
 
