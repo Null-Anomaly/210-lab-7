@@ -26,15 +26,20 @@ int main()
 
 string* reverseArray(string* arry)
 {
-    double safety = 0;
+    string switcher = 0;
     cout << "Original Array \n";
     for(int i = 0; i < 5; i++) 
     {
-        cout << "> Element #" << i << ": ";
-        cin >> safety;
-        arry[i] = safety;
+        switcher = arry[4-i];
+        arry[4-i] = arry[i];
+        arry[i] = switcher;
+        //cout << "> Element #" << i << ": ";
+        //cin >> safety;
+       // arry[i] = safety;
     }
     cout << "Data entry complete.\n";
+
+    return arry;
 }
 
 void displayArray(string* arry)
