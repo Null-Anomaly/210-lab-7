@@ -4,19 +4,17 @@ IDE used: VSC*/
 #include <iostream>
 using namespace std;
 
-void enterArrayData(double*);
-void outputArrayData(double*);
-double sumArray(double*);
+void reverseArray(string*);
+void displayArray(string*);
 
+//The main function of the program
 int main()
 {
-    double* arr = nullptr;
+    string* arr = nullptr;
     const int SIZE = 5;
-    arr = new double[SIZE];
-    enterArrayData(arr);
-    outputArrayData(arr);
-    double sum = sumArray(arr);
-    cout << "\nSum of values: " << sum;
+    arr = new string[SIZE];
+    reverseArray(arr);
+    displayArray(arr);
 
     delete[] arr;
     return 0;
