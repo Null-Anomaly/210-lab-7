@@ -4,15 +4,19 @@ IDE used: VSC*/
 #include <iostream>
 using namespace std;
 
-void reverseArray(string*);
+string* reverseArray(string*);
 void displayArray(string*);
 
 //The main function of the program
 int main()
 {
     string* arr = nullptr;
-    const int SIZE = 5;
-    arr = new string[SIZE];
+    arr = new string[5];
+    arr[0] = "Billy";
+    arr[1] = "Bob";
+    arr[2] = "Joe";
+    arr[3] = "Burt";
+    arr[4] = "Tam";
     reverseArray(arr);
     displayArray(arr);
 
@@ -20,10 +24,10 @@ int main()
     return 0;
 }
 
-void enterArrayData(double* arry)
+string* reverseArray(string* arry)
 {
     double safety = 0;
-    cout << "Data entry for the array: \n";
+    cout << "Original Array \n";
     for(int i = 0; i < 5; i++) 
     {
         cout << "> Element #" << i << ": ";
@@ -33,21 +37,11 @@ void enterArrayData(double* arry)
     cout << "Data entry complete.\n";
 }
 
-void outputArrayData(double* arry)
+void displayArray(string* arry)
 {
     cout << "Outputting array elements: ";
     for (int i = 0; i < 5; i++)
     {
         cout << arry[i] << " ";
     }
-}
-
-double sumArray(double* arry)
-{
-    double total = 0;
-    for (int i = 0; i < 5; i++)
-    {
-        total += arry[i];
-    }
-    return total;
 }
