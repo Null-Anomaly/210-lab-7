@@ -4,30 +4,24 @@ IDE used: VSC*/
 #include <iostream>
 using namespace std;
 
-string* reverseArray(string*);
-void displayArray(string*);
+char* reverseArray(char*);
+void displayArray(char*);
 
 //The main function of the program
 int main()
 {
-    string* arr = nullptr;
-    arr = new string[5];
-    string *reversed = nullptr;
-    arr[0] = "Billy";
-    arr[1] = "Bob";
-    arr[2] = "Joe";
-    arr[3] = "Burt";
-    arr[4] = "Tam";
-    reversed = reverseArray(arr);
+    char* arr[5] = {"Billy", "Bob", "Joe", "Burt", "Tam"};
+    char *reversed;
+    reversed = reverseArray(*arr);
     displayArray(reversed);
 
-    delete[] arr;
     return 0;
 }
 
-string* reverseArray(string* arry)
+//The function to reverse the array
+char* reverseArray(char* arry)
 {
-    string switcher = 0;
+    char switcher;
     cout << "Original Array \n";
     for(int i = 0; i <5; i++)
     {
@@ -42,9 +36,10 @@ string* reverseArray(string* arry)
     return arry;
 }
 
-void displayArray(string* arry)
+//Displays an array
+void displayArray(char* arry)
 {
-    cout << "Outputting array elements: ";
+    cout << "Reversed Array: ";
     for (int i = 0; i < 5; i++)
     {
         cout << arry[i] << " ";
