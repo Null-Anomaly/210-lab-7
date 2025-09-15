@@ -29,8 +29,8 @@ char* reverseArray(char* arry)
     }
     for(int i = 0; i < 5; i++) 
     {
-        switcher = arry[4-i];
-        arry[4-i] = arry[i];
+        switcher = arry[5-i];
+        arry[5-i] = arry[i];
         arry[i] = switcher;
     }
     return arry;
