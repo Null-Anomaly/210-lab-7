@@ -28,7 +28,7 @@ int main()
 string* reverseArray(string *arry)
 {
     string switcher;
-    cout << "Original Array \n";
+    cout << "Original Array: ";
     for(int i = 0; i <5; i++)
     {
         cout << arry[i] << " ";
@@ -36,8 +36,14 @@ string* reverseArray(string *arry)
     for(int i = 0; i < 5; i++) 
     {
         switcher = arry[4-i];
+        cout << switcher;
         arry[4-i] = arry[i];
         arry[i] = switcher;
+    }
+    cout << "Test";
+    for(int i = 0; i <5; i++)
+    {
+        cout << arry[i] << " ";
     }
     return arry;
 }
@@ -45,7 +51,7 @@ string* reverseArray(string *arry)
 //Displays an array
 void displayArray(string* arry)
 {
-    cout << "Reversed Array: ";
+    cout << "\nReversed Array: ";
     for (int i = 0; i < 5; i++)
     {
         cout << arry[i] << " ";
