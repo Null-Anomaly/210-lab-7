@@ -17,8 +17,7 @@ int main()
     arr[2]= "Joe";
     arr[3]= "Burt";
     arr[4]= "Tam";
-    string *reversed;
-    reversed = reverseArray(arr);
+    string *reversed = reverseArray(arr);
     displayArray(reversed);
 
     return 0;
@@ -27,7 +26,7 @@ int main()
 //The function to reverse the array
 string* reverseArray(string *arry)
 {
-    string switcher;
+    static string holdover[5];
     cout << "Original Array: ";
     for(int i = 0; i <5; i++)
     {
@@ -35,17 +34,9 @@ string* reverseArray(string *arry)
     }
     for(int i = 0; i < 5; i++) 
     {
-        switcher = arry[4-i];
-        cout << switcher;
-        arry[4-i] = arry[i];
-        arry[i] = switcher;
+        holdover[i] = arry[4-i];
     }
-    cout << "Test";
-    for(int i = 0; i <5; i++)
-    {
-        cout << arry[i] << " ";
-    }
-    return arry;
+    return holdover;
 }
 
 //Displays an array
